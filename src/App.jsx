@@ -56,11 +56,6 @@ class App extends Component {
         <CreateContent
           onSubmit={function (_title, _desc) {
             this.max_content_id = this.max_content_id + 1;
-            // let _contents = this.state.contents.concat({
-            //   id: this.max_content_id,
-            //   title: _title,
-            //   desc: _desc,
-            // });
             let newContents = Array.from(this.state.contents);
             newContents.push({
               id: this.max_content_id,
@@ -119,6 +114,7 @@ class App extends Component {
             if (_mode === "delete") {
               if (window.confirm("really?")) {
                 //누구를 삭제할 것인가
+                // filter 사용하는건 어때?
                 let _contents = Array.from(this.state.contents);
                 let i = 0;
                 while (i < _contents.length) {
